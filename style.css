@@ -100,3 +100,131 @@ label[for="open"]:hover {
     background-color: blueviolet;
     transition: 0.2s linear;
 }
+
+
+.hero {
+    padding: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('https://wallpapercave.com/wp/bc9PYTV.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    filter: sepia(100%) brightness(250%) contrast(200%);
+    /* filter: invert(100%); */
+    /* filter: grayscale(100%) blur(5px); */
+    z-index: -1;
+}
+
+/* .hero::after{} */
+
+.rappi {
+    background: transparent;
+}
+.rappi h1 {
+    margin: 50px;
+    text-align: center;
+}
+
+.rappi p {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.rappi p::first-letter {
+    font-size: 70px;
+    color: gray;
+
+}
+
+.rappi p::first-line {
+    font-style: oblique;
+}
+
+.rappi article ul li {
+    color: orange;
+    font-size: 70px;
+}
+
+.rappi article ul li:nth-child(3n + 1) {
+    color : blue;
+}
+
+.rappi article span {
+    margin: 50px auto;
+    font-size: 45px;
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.rappi article span::before {
+    content: '<';
+    font-size: 45px;
+    margin-right: 15px;
+    cursor: pointer;
+
+}
+
+.rappi article span::after {
+    content: '>';
+    font-size: 45px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+
+iframe {
+    filter:grayscale(100%) contrast(200%) invert(100%);
+}
+
+
+/* @media (max-width: 640px) and (min-width: 320px){
+    .rappi p {
+        width: 90%;
+        font-size: 50px;
+    }
+
+    .rappi p::first-line {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    iframe{
+        width: 100%;
+    }
+
+} */
+
+@media (max-width: 640px) and (orientation: portrait ){
+    .rappi p {
+        width: 90%;
+        font-size: 50px;
+    }
+
+    .rappi p::first-line {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    iframe{
+        width: 100%;
+    }
+
+}
