@@ -1,0 +1,235 @@
+* { padding: 0;
+    margin: 0;
+}
+
+
+section {
+    background-color:rgb(197, 248, 248);
+    /* selectores anidados, padre espacio y el hijo */
+
+    & h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 40px;
+    }
+
+    & .parrafo a {
+        font-size: 24px;
+        &:first-child {
+            font-size: 40px;
+            color: aliceblue;
+        }
+    }
+
+    & a:last-of-type{
+        color:red;
+    }
+
+    & aside a:nth-of-type(1) {
+        color:blue;
+    }
+
+    /* section article aside ul > li{
+        padding: 40px;
+    } */
+
+    & article figure {
+        width: 200px;
+           & picture img {
+            width:  100%;
+        }
+    }
+
+
+}
+
+
+
+
+
+/* selectores de atributo */
+
+footer form input {
+    border: 2px solid lightgray;
+    margin: 3px;
+    color: green;
+    &[type="email"] {
+        padding: 10px;
+    }
+
+}
+
+
+
+section article span[role="img"] {
+    background-image: url("./download.jpeg");
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+
+.modal {
+    width: 500px;
+    text-align: center;
+    background-color: aliceblue;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: 0.5s linear;
+}
+
+label[for="open"] {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: azure;
+    border-radius: 50px;
+    transition: 0.2s linear;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .modal {
+    height: 300px;
+    padding: 50px;
+    transition: 0.5s linear;
+}
+
+label[for="open"]:hover {
+    background-color: blueviolet;
+    transition: 0.2s linear;
+}
+
+
+.hero {
+    padding: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    & h1 {
+        color: white;
+        font-size: 50px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url('https://wallpapercave.com/wp/bc9PYTV.jpg') ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: 0;
+        top: 0;
+        filter: sepia(100%) brightness(250%) contrast(200%);
+        /* filter: invert(100%); */
+        /* filter: grayscale(100%) blur(5px); */
+        z-index: -1;
+    }
+}
+
+
+
+/* .hero::after{} */
+
+.rappi {
+    background: transparent;
+    & h1 {
+        margin: 50px;
+        text-align: center;
+    }
+
+    & p {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 25px;
+
+        &::first-letter {
+            font-size: 70px;
+            color: gray;
+
+        }
+
+        &::first-line {
+            font-style: oblique;
+        }
+
+    }
+
+    & article ul li {
+        color: orange;
+        font-size: 70px;
+         &:nth-child(3n + 1) {
+            color : blue;
+        }
+    }
+
+
+
+    & article span {
+        margin: 50px auto;
+        font-size: 45px;
+        text-align: center;
+        display: block;
+        position: relative;
+        &::before {
+            content: '<';
+            font-size: 45px;
+            margin-right: 15px;
+            cursor: pointer;
+
+        }
+        &::after {
+            content: '>';
+            font-size: 45px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+iframe {
+    filter:grayscale(100%) contrast(200%) invert(100%);
+}
+
+
+/* @media (max-width: 640px) and (min-width: 320px){
+    .rappi p {
+        width: 90%;
+        font-size: 50px;
+    }
+
+    .rappi p::first-line {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    iframe{
+        width: 100%;
+    }
+
+} */
+
+@media (max-width: 640px) and (orientation: portrait ){
+    .rappi p {
+        width: 90%;
+        font-size: 50px;
+        &::first-line {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
+
+
+    iframe {
+        width: 100%;
+    }
+
+}
